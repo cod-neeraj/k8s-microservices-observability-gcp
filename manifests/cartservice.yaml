@@ -20,8 +20,8 @@ spec:
       #   runAsGroup: 1000
       #   runAsNonRoot: true
       #   runAsUser: 1000
-      # containers:
-      # - name: server
+      containers:
+      - name: server
       #   securityContext:
       #     allowPrivilegeEscalation: false
       #     capabilities:
@@ -92,8 +92,8 @@ spec:
       #   runAsGroup: 1000
       #   runAsNonRoot: true
       #   runAsUser: 1000
-      # containers:
-      # - name: redis
+      containers:
+      - name: redis
       #   securityContext:
       #     allowPrivilegeEscalation: false
       #     capabilities:
