@@ -28,7 +28,7 @@ resource "aws_eks_node_group" "this" {
 
   instance_types = [var.node_instance_type]
 
-  ami_type = "AL2_x86_64"
+  ami_type = "AL2023_x86_64_STANDARD"
   capacity_type = "ON_DEMAND"
 
 
