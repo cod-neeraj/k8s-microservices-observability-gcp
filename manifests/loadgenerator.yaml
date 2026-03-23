@@ -79,8 +79,8 @@ spec:
           limits:
             cpu: 500m
             memory: 512Mi
-# ---
-# apiVersion: v1
-# kind: ServiceAccount
-# metadata:
-#   name: loadgenerator
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: loadgenerator

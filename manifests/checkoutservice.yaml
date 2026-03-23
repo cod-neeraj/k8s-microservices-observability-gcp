@@ -13,21 +13,21 @@ spec:
       labels:
         app: checkoutservice
     spec:
-      # serviceAccountName: checkoutservice
-      # securityContext:
-      #   fsGroup: 1000
-      #   runAsGroup: 1000
-      #   runAsNonRoot: true
-      #   runAsUser: 1000
+      serviceAccountName: checkoutservice
+      securityContext:
+        fsGroup: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
       containers:
         - name: server
-      #     securityContext:
-      #       allowPrivilegeEscalation: false
-      #       capabilities:
-      #         drop:
-      #           - ALL
-      #       privileged: false
-      #       readOnlyRootFilesystem: true
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            privileged: false
+            readOnlyRootFilesystem: true
           image: gcr.io/google-samples/microservices-demo/checkoutservice:v0.10.1
           ports:
           - containerPort: 5050
@@ -74,8 +74,8 @@ spec:
   - name: grpc
     port: 5050
     targetPort: 5050
-# ---
-# apiVersion: v1
-# kind: ServiceAccount
-# metadata:
-#   name: checkoutservice
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: checkoutservice

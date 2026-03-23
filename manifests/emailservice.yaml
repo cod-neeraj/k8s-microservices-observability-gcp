@@ -13,22 +13,22 @@ spec:
       labels:
         app: emailservice
     spec:
-      # serviceAccountName: emailservice
-      # terminationGracePeriodSeconds: 5
-      # securityContext:
-      #   fsGroup: 1000
-      #   runAsGroup: 1000
-      #   runAsNonRoot: true
-      #   runAsUser: 1000
+      serviceAccountName: emailservice
+      terminationGracePeriodSeconds: 5
+      securityContext:
+        fsGroup: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
       containers:
       - name: server
-      #   securityContext:
-      #     allowPrivilegeEscalation: false
-      #     capabilities:
-      #       drop:
-      #         - ALL
-      #     privileged: false
-      #     readOnlyRootFilesystem: true
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
         image: gcr.io/google-samples/microservices-demo/emailservice:v0.10.1
         ports:
         - containerPort: 8080
@@ -67,8 +67,8 @@ spec:
   - name: grpc
     port: 5000
     targetPort: 8080
-# ---
-# apiVersion: v1
-# kind: ServiceAccount
-# metadata:
-#   name: emailservice
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: emailservice
